@@ -1,0 +1,59 @@
+.download{
+  background-color: #648cff;
+  position: relative;
+  z-index: -2;
+  &-title{
+    padding-top: 125px;
+    color: #fff;
+    margin-bottom: 45px;
+  }
+  &-text{
+    color: #fff;
+    font-size: em(18);
+    margin-bottom: 32px;
+  }
+
+  &-links{
+    display: flex;
+    &_link{
+      margin-right: 6px;
+    }
+    padding-bottom: 100px;
+  }
+  &-img{
+    position: absolute;
+    bottom: 0;
+    right: 40px;
+    height: auto;
+  }
+  @media (max-width: 1200px) {
+    .download{
+      &-img{
+        right: 0;
+        width: 600px;
+        z-index:-1;
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    .download{
+      &-img{
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .download{
+      &-links{
+        &_link{
+          img{
+            height: auto;
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+}

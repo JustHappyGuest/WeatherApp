@@ -1,0 +1,294 @@
+.reviews{
+  .widgets{
+    padding: 0 0 140px 0;
+    text-align: center;
+    &-title{
+      margin: 0 0 30px 0;
+      color: #648cff;
+    }
+    &-subtitle{
+      margin: 0 0 60px 0;
+      font-size: em(18);
+      color: #999;
+    }
+
+    .slider{
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      &-inner{
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        width: 70%;
+        height: 700px;
+        align-items: center;
+        &_item{
+          position: absolute;
+          width: 33.3333333%;
+          transition: all ease 1s;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.19);
+          &-active{
+            transform: scale(1.2);
+            z-index: 2;
+          }
+          img{
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      &-controls{
+        position: absolute;
+        top:45%;
+        width: 100%;
+        height: 1px;
+        &_previous{
+          cursor: pointer;
+          left: 5%;
+          position: absolute;
+          height: 52px;
+          width: 28px;
+          background: url("../img/left_arrow.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        &_next{
+          cursor: pointer;
+          right: 5%;
+          position: absolute;
+          height: 52px;
+          width: 28px;
+          background: url("../img/right_arrow.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    .widgets{
+      padding: 0 0 60px 0;
+      &-title{
+        margin: 0 0 15px 0;
+      }
+      &-subtitle{
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .widgets{
+      .slider {
+        &-controls {
+          &_previous {
+            height: 42px;
+            width: 18px;
+          }
+          &_next {
+            height: 42px;
+            width: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  .screenshots{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &-title{
+      margin: 0 0 30px 0;
+      color: #648cff;
+    }
+
+    &-subtitle{
+      margin: 0 0 60px 0;
+      font-size: em(18);
+      color: #999;
+    }
+
+    &-list{
+      &_item{
+        display: flex;
+        text-align: left;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        &-title{
+          color: #648cff;
+        }
+        &-text{
+          color: #353854;
+          line-height: em(24);
+        }
+
+        &-extractlist{
+          display: flex;
+          margin-top: 21px;
+          &_item{
+            position: relative;
+            width: 42px;
+            height: 42px;
+            line-height: 42px;
+            text-align: center;
+            border-radius: 42px;
+            color: #c7d2e7;
+            font-size: em(12);
+            font-weight: 700;
+            background: #fff;
+            box-shadow:  0 0 15px -5px rgba(0, 0, 0, 0.2);
+          }
+          &_item:nth-child(1){
+            z-index: 3;
+            left:0;
+          }
+          &_item:nth-child(2){
+            z-index: 2;
+            left:-5px;
+          }
+          &_item:nth-child(3){
+            z-index: 1;
+            left:-10px;
+          }
+        }
+
+        &-column:last-child{
+          margin-left: 60px;
+        }
+      }
+      &_item:nth-child(even){
+        .screenshots-list_item-column:last-child{
+          order:-1;
+          margin-left: 0;
+          margin-right: 60px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    .screenshots{
+      &-title{
+        margin: 0 0 15px 0;
+      }
+      &-subtitle{
+        margin: 0 0 30px 0;
+      }
+      &-list{
+        &_item{
+          margin-top: 60px;
+          &-img{
+            img{
+              height: auto;
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .screenshots{
+      &-list{
+        &_item{
+          &-img{
+            img{
+              width: 130px;
+            }
+          }
+
+          &-icon{
+            height: auto;
+            width: 60px;
+          }
+          &-column:last-child{
+            margin-left: 20px;
+          }
+        }
+        &_item:nth-child(even){
+          .screenshots-list_item-column:last-child{
+            margin-left: 0;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .comments{
+    padding-top: 120px;
+    padding-bottom: 150px;
+    text-align: center;
+    &-title{
+      margin: 0 0 30px 0;
+      color: #648cff;
+    }
+
+    &-subtitle{
+      margin: 0 0 120px 0;
+      font-size: em(18);
+      color: #999;
+    }
+
+    &-list{
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap:60px;
+      grid-row-gap:160px;
+      padding-left: 47px;
+      padding-right: 47px;
+      &_item{
+        position: relative;
+        text-align: left;
+        font-size: em(24);
+        line-height: em(26);
+        color: #353854;
+        &-autor{
+          font-size: em(12);
+        }
+      }
+      &_item:after{
+        content: " ";
+        position: absolute;
+        right: 0;
+        bottom: -59px;
+        background-image: url("../img/close_quote.png");
+        height: 35px;
+        width: 47px;
+      }
+      &_item:before{
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: -59px;
+        background-image: url("../img/open_quote.png");
+        height: 35px;
+        width: 47px;
+      }
+    }
+  }
+  @media (max-width: 850px) {
+    .comments{
+      &-title{
+        margin: 0 0 15px 0;
+      }
+      &-subtitle{
+        margin: 0 0 90px 0;
+      }
+      &-list{
+        grid-column-gap: 0px;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
